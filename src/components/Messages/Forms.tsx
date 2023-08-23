@@ -12,8 +12,10 @@ export const Forms: FC = () => {
   const user_id = Array.isArray(messages)
     ? messages.find((elem) => elem.user_id === idOfRoute)?.user_id
     : undefined;
+  const {  loadFromUserMessage } = useActions()
   const handleSendMessage = () => {
     sendMessage(message, user_id)
+    loadFromUserMessage()
     setMessage('')
   }
   return (
