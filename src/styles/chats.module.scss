@@ -14,6 +14,7 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.18);
 
+
     .header_title {
       text-align: center;
       h2 {
@@ -64,6 +65,7 @@
     }
 
     .wrapper {
+
       // message wrapper block
       .message_wrapper_from_user, .message_wrapper_to_user {
         max-width: 100%;

@@ -3,10 +3,28 @@ import { Header } from '../Header/Header'
 import styles from '../../styles/chats.module.scss'
 import { Forms, Messages } from '../Messages'
 import { useParams } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
-export const Chat: FC = () => {
+type ChatProps = {
+  open: boolean
+}
+
+export const Chat: FC<ChatProps> = ({ open }) => {
   const { id } = useParams();
   const parsedId = parseInt(id as string);
+
+   const chatVariants = {
+    true: {
+      width: "95%"
+    },
+    false: {
+      width: "0%",
+      transition: {
+        delay: 0.3,
+      },
+    },
+  }
+
 
   if (isNaN(parsedId)) {
     return (
@@ -16,10 +34,15 @@ export const Chat: FC = () => {
     );
   }
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      variants={chatVariants}
+      initial={open ? 'true' : 'false'}
+      animate={open ? 'true' : 'false'}
+    >
       <Header text={'Lincode Chat'} />
       <Messages />
       <Forms />
-    </div>
+    </motion.div>
   )
 }

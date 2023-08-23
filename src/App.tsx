@@ -17,7 +17,7 @@ export const App: FC = () => {
     <div className="container">
       <Sidebar open={open} setOpen={setOpen} />
       <Routes>
-          <Route path='/:id?' element={<Chat />}/>
+          <Route path='/:id?' element={<Chat open={open}/>}/>
       </Routes>
     </div>
   )

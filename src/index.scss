@@ -28,3 +28,6 @@ a {
   display: flex;
   justify-content: space-between;
 }
+::-webkit-scrollbar {
+  width:0;
+}
