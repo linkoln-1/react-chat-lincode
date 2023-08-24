@@ -16,6 +16,7 @@
     "@types/node": "^16.18.41",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "concurrently": "^8.2.1",
     "cors": "^2.8.5",
     "dayjs": "^1.11.9",
     "express": "^4.18.2",
@@ -45,7 +46,8 @@
     "eject": "react-scripts eject",
     "prettify": "prettier --write ./src",
     "watch": "npx json-server --watch db.json --port 8000",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "development": "concurrently \"npx json-server --watch db.json --port 8000\" \"nodemon server.js\""
   },
   "eslintConfig": {
     "extends": [
