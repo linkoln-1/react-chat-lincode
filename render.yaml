@@ -5,4 +5,4 @@
 
 - name: json-server
   type: web
-  buildCommand: npm install -g json-server && json-server --watch db.json --port 8000
+  buildCommand: npm install -g json-server && json-server --watch db.json --port 8001
