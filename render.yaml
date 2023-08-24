@@ -1,0 +1,8 @@
+- name: your-server
+  type: web
+  buildCommand: npm install && npm run build
+  startCommand: node server.js
+
+- name: json-server
+  type: web
+  buildCommand: npm install -g json-server && json-server --watch db.json --port 8000
