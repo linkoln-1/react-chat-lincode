@@ -5,5 +5,5 @@ export let serverUrl;
 if (NODE_ENV === 'development') {
   serverUrl = 'http://localhost:8001';
 } else {
-  serverUrl = 'https://lincode-chat.onrender.com';
+  serverUrl = 'https://lincode-react-chat.onrender.com';
 }
