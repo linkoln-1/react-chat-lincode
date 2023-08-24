@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux'
-import { ContactActionTypes } from '../../types/contact_types'
-import { ChatActionTypes } from '../../types/chats_types'
+import { ContactAction, ContactActionTypes } from '../../types/contact_types'
+import { ChatAction, ChatActionTypes, SendMessagesAction } from '../../types/chats_types'
 import { SendMessageActionType } from '../../types/chats_types'
 
 export const loadUsers = () => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<ContactAction>) => {
     dispatch({ type: ContactActionTypes.FETCH_CONTACTS })
 
     fetch('http://localhost:8000/users')
@@ -23,7 +23,7 @@ export const sendMessage = (
   user_id: number,
 ) => {
   const date = new Date()
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<SendMessagesAction>) => {
     dispatch({ type: SendMessageActionType.SEND_MESSAGE })
 
     fetch('http://localhost:8000/messages', {
@@ -49,7 +49,7 @@ export const sendMessage = (
 }
 
 export const loadFromUserMessage = () => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<ChatAction | SendMessagesAction>) => {
     dispatch({ type: ChatActionTypes.FETCH_CHAT })
 
     fetch('http://localhost:8000/messages')

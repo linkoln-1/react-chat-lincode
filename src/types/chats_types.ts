@@ -58,7 +58,7 @@ interface FetchSendMessageSuccessAction {
   }>
 }
 
-export type SendMessages =
+export type SendMessagesAction =
   | FetchSendMessagesAction
   | FetchSendMessageSuccessAction
 

@@ -1,5 +1,5 @@
 import { ChatAction, ChatActionTypes, initialChatsType } from '../types/chats_types'
-import { SendMessageActionType, SendMessages } from '../types/chats_types'
+import { SendMessageActionType, SendMessagesAction } from '../types/chats_types'
 
 const initialState: initialChatsType = {
   chats: [],
@@ -7,7 +7,7 @@ const initialState: initialChatsType = {
   messages: [],
 }
 
-export const chatsReducer = (state = initialState, action: ChatAction | SendMessages) => {
+export const chatsReducer = (state = initialState, action: ChatAction | SendMessagesAction) => {
   switch (action.type) {
     case ChatActionTypes.FETCH_CHAT:
       return {
