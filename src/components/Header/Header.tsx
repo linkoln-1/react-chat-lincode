@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from '../../styles/chats.module.scss';
+import React from 'react'
+import styles from '../../styles/chats.module.scss'
 
 interface HeaderProps {
-  text: string;
+  text: string
 }
 
 const Header: React.FC<HeaderProps> = ({ text }) => {
@@ -12,9 +12,9 @@ const Header: React.FC<HeaderProps> = ({ text }) => {
         <h2>{text}</h2>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(Header);
+export default React.memo(Header)
 
-export { Header };
+export { Header }

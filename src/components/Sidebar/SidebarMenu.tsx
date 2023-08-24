@@ -1,24 +1,26 @@
-import React, { FC } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { RootState } from '../../redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import React, { FC } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { RootState } from '../../redux'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 
-import styles from '../../styles/sidebar.module.scss';
-import { iconVariant, sideContainerVariant } from '../../view/sidebar_variants';
-import { subHeading } from '../../view/subHeading';
-import { SidebarMenuContact } from './SidebarMenuContact';
+import styles from '../../styles/sidebar.module.scss'
+import { iconVariant, sideContainerVariant } from '../../view/sidebar_variants'
+import { subHeading } from '../../view/subHeading'
+import { SidebarMenuContact } from './SidebarMenuContact'
 
 type SidebarMenuProps = {
-  open: boolean;
-  setOpen: (a: boolean) => void;
-};
+  open: boolean
+  setOpen: (a: boolean) => void
+}
 
 export const SidebarMenu: FC<SidebarMenuProps> = ({ open, setOpen }) => {
-  const contacts = useTypedSelector((state: RootState) => state.contacts.contacts)
+  const contacts = useTypedSelector(
+    (state: RootState) => state.contacts.contacts,
+  )
   const handleToggle = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   return (
     <motion.div
@@ -41,7 +43,7 @@ export const SidebarMenu: FC<SidebarMenuProps> = ({ open, setOpen }) => {
         </div>
         <div className={styles.title_menu}>
           <motion.ul>
-            {contacts.map((item: { id: number, username: string }) => (
+            {contacts.map((item: { id: number; username: string }) => (
               <Link key={item.id} to={`/${item.id}`}>
                 <motion.li
                   key={item.id}
@@ -61,5 +63,5 @@ export const SidebarMenu: FC<SidebarMenuProps> = ({ open, setOpen }) => {
         </div>
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}

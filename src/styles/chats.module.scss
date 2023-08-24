@@ -14,12 +14,11 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.18);
 
-
     .header_title {
       text-align: center;
       h2 {
         color: white;
-        font-family: "Arial Black", sans-serif;
+        font-family: 'Arial Black', sans-serif;
       }
     }
   }
@@ -50,8 +49,6 @@
       background: linear-gradient(180deg, #00c6fb, #005bea);
     }
 
-
-
     .UserNameOfMessageBlock {
       @include box-shadow(0px 8px 32px 0px, rgba(31, 38, 135, 0.37));
       background: rgba(255, 255, 255, 0.3);
@@ -65,9 +62,9 @@
     }
 
     .wrapper {
-
       // message wrapper block
-      .message_wrapper_from_user, .message_wrapper_to_user {
+      .message_wrapper_from_user,
+      .message_wrapper_to_user {
         max-width: 100%;
         width: 100%;
         display: flex;
@@ -89,19 +86,17 @@
             display: inline-block;
             word-break: break-word;
             width: 330px;
-            font-family: "Droid Sans", sans-serif;
+            font-family: 'Droid Sans', sans-serif;
           }
           .message_timestamp {
-            @include font(11px, #000, 700)
+            @include font(11px, #000, 700);
           }
-
 
           p {
             @include font(17px, black, 700);
-            font-family: "Droid Sans", sans-serif;
+            font-family: 'Droid Sans', sans-serif;
             padding-bottom: 10px;
           }
-
         }
       }
 
@@ -117,8 +112,8 @@
   align-self: center;
   text-align: center;
   flex: 1;
-  @include font(20px, #fff,500)
+  @include font(20px, #fff, 500);
 }
 .no_selected_user > span {
-  @include font(25px, #fff, 400)
+  @include font(25px, #fff, 400);
 }

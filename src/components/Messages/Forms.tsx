@@ -11,8 +11,8 @@ export const Forms: FC = () => {
   const messages = useTypedSelector((state) => state.chats.chats)
   const user_id = Array.isArray(messages)
     ? messages.find((elem) => elem.user_id === idOfRoute)?.user_id
-    : undefined;
-  const {  loadFromUserMessage } = useActions()
+    : undefined
+  const { loadFromUserMessage } = useActions()
   const handleSendMessage = () => {
     sendMessage(message, user_id)
     loadFromUserMessage()
@@ -22,16 +22,14 @@ export const Forms: FC = () => {
     <div className={styles.form_container}>
       <div className={styles.form_input}>
         <input
-          type='text'
+          type="text"
           placeholder="Введите ваше сообщение..."
           className={styles.input}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
 
-        <button onClick={handleSendMessage}>
-          Отправить
-        </button>
+        <button onClick={handleSendMessage}>Отправить</button>
       </div>
     </div>
   )

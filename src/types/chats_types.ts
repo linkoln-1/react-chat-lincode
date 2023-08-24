@@ -1,7 +1,7 @@
 // Chats
 export interface initialChatsType {
   chats: Array<{
-    username?: string,
+    username?: string
     id?: number
     user_id: number
     timestamp: string
@@ -9,9 +9,9 @@ export interface initialChatsType {
   }>
   loading: boolean
   messages: Array<{
-    username?: string,
-    user_id: number,
-    timestamp: string,
+    username?: string
+    user_id: number
+    timestamp: string
     text: string
     id?: number
   }>
@@ -19,7 +19,6 @@ export interface initialChatsType {
 export enum ChatActionTypes {
   FETCH_CHAT = 'FETCH_CHAT',
   FETCH_CHAT_SUCCESS = 'FETCH_CHAT_SUCCESS',
-
 }
 interface FetchChatsAction {
   type: ChatActionTypes.FETCH_CHAT
@@ -27,7 +26,7 @@ interface FetchChatsAction {
 interface FetchChatsSuccessAction {
   type: ChatActionTypes.FETCH_CHAT_SUCCESS
   payload: Array<{
-    username?: string,
+    username?: string
     id?: number
     user_id: number
     timestamp: string
@@ -35,9 +34,7 @@ interface FetchChatsSuccessAction {
   }>
 }
 
-export type ChatAction =
-  | FetchChatsAction
-  | FetchChatsSuccessAction
+export type ChatAction = FetchChatsAction | FetchChatsSuccessAction
 //----------------------------------------------------------------------------
 // Send message
 export enum SendMessageActionType {
@@ -50,9 +47,9 @@ interface FetchSendMessagesAction {
 interface FetchSendMessageSuccessAction {
   type: SendMessageActionType.SEND_MESSAGE_SUCCESS
   payload: Array<{
-    username?: string,
-    user_id: number,
-    timestamp: string,
+    username?: string
+    user_id: number
+    timestamp: string
     text: string
     id?: number
   }>
@@ -63,7 +60,6 @@ export type SendMessagesAction =
   | FetchSendMessageSuccessAction
 
 //---------------------------------------------------------------------------
-
 
 // //Load Sended Message
 // export enum LoadSendMessageActionType {

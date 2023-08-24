@@ -1,4 +1,8 @@
-import { ChatAction, ChatActionTypes, initialChatsType } from '../types/chats_types'
+import {
+  ChatAction,
+  ChatActionTypes,
+  initialChatsType,
+} from '../types/chats_types'
 import { SendMessageActionType, SendMessagesAction } from '../types/chats_types'
 
 const initialState: initialChatsType = {
@@ -7,7 +11,10 @@ const initialState: initialChatsType = {
   messages: [],
 }
 
-export const chatsReducer = (state = initialState, action: ChatAction | SendMessagesAction) => {
+export const chatsReducer = (
+  state = initialState,
+  action: ChatAction | SendMessagesAction,
+) => {
   switch (action.type) {
     case ChatActionTypes.FETCH_CHAT:
       return {
@@ -32,25 +39,10 @@ export const chatsReducer = (state = initialState, action: ChatAction | SendMess
       return {
         ...state,
         loading: false,
-        messages: action.payload
+        messages: action.payload,
       }
 
     default:
       return state
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

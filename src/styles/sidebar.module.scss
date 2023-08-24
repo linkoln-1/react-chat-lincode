@@ -90,6 +90,6 @@
     @include padding(0 0 0 7px);
   }
   .time {
-    @include font(12px, #fff, 400)
+    @include font(12px, #fff, 400);
   }
 }

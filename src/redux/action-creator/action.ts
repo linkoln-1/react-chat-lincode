@@ -1,6 +1,10 @@
 import { Dispatch } from 'redux'
 import { ContactAction, ContactActionTypes } from '../../types/contact_types'
-import { ChatAction, ChatActionTypes, SendMessagesAction } from '../../types/chats_types'
+import {
+  ChatAction,
+  ChatActionTypes,
+  SendMessagesAction,
+} from '../../types/chats_types'
 import { SendMessageActionType } from '../../types/chats_types'
 
 export const loadUsers = () => {
@@ -18,10 +22,7 @@ export const loadUsers = () => {
   }
 }
 
-export const sendMessage = (
-  message: string,
-  user_id: number,
-) => {
+export const sendMessage = (message: string, user_id: number) => {
   const date = new Date()
   return (dispatch: Dispatch<SendMessagesAction>) => {
     dispatch({ type: SendMessageActionType.SEND_MESSAGE })

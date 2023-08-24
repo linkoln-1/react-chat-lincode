@@ -10,28 +10,27 @@ type ChatProps = {
 }
 
 export const Chat: FC<ChatProps> = ({ open }) => {
-  const { id } = useParams();
-  const parsedId = parseInt(id as string);
+  const { id } = useParams()
+  const parsedId = parseInt(id as string)
 
-   const chatVariants = {
+  const chatVariants = {
     true: {
-      width: "95%"
+      width: '95%',
     },
     false: {
-      width: "0%",
+      width: '0%',
       transition: {
         delay: 0.3,
       },
     },
   }
 
-
   if (isNaN(parsedId)) {
     return (
       <div className={styles.no_selected_user}>
         <span>←</span> Выберите Пользователя
       </div>
-    );
+    )
   }
   return (
     <motion.div

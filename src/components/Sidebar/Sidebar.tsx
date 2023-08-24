@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import { SidebarMenu } from './SidebarMenu';
+import React, { FC } from 'react'
+import { SidebarMenu } from './SidebarMenu'
 
-import styles from '../../styles/sidebar.module.scss';
+import styles from '../../styles/sidebar.module.scss'
 
 type SidebarProps = {
   open: boolean

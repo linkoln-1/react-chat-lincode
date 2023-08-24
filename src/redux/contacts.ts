@@ -1,18 +1,21 @@
 import { ContactAction, ContactActionTypes } from '../types/contact_types'
 
 export interface Contact {
-  id: number;
-  username: string;
+  id: number
+  username: string
 }
 export interface initialStateType {
-  contacts: Array<Contact>;
-  loading: boolean;
+  contacts: Array<Contact>
+  loading: boolean
 }
-const initialState: initialStateType  = {
+const initialState: initialStateType = {
   contacts: [],
   loading: false,
 }
-export const contactsReducer = (state = initialState, action: ContactAction) => {
+export const contactsReducer = (
+  state = initialState,
+  action: ContactAction,
+) => {
   switch (action.type) {
     case ContactActionTypes.FETCH_CONTACTS:
       return {
