@@ -11,7 +11,7 @@ export const loadUsers = () => {
   return (dispatch: Dispatch<ContactAction>) => {
     dispatch({ type: ContactActionTypes.FETCH_CONTACTS })
 
-    fetch('http://localhost:8000/users')
+    fetch('http://localhost:8001/users')
       .then((res) => res.json())
       .then((data) => {
         dispatch({
@@ -27,7 +27,7 @@ export const sendMessage = (message: string, user_id: number) => {
   return (dispatch: Dispatch<SendMessagesAction>) => {
     dispatch({ type: SendMessageActionType.SEND_MESSAGE })
 
-    fetch('http://localhost:8000/messages', {
+    fetch('http://localhost:8001/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -53,7 +53,7 @@ export const loadFromUserMessage = () => {
   return (dispatch: Dispatch<ChatAction | SendMessagesAction>) => {
     dispatch({ type: ChatActionTypes.FETCH_CHAT })
 
-    fetch('http://localhost:8000/messages')
+    fetch('http://localhost:8001/messages')
       .then((res) => res.json())
       .then((data) => {
         dispatch({
